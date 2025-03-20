@@ -1,29 +1,12 @@
 const express = require("express");
+const { userRouter } = require("./routes/user");
+const { courseRouter } = require("./routes/course");
+
 const app = express();
-const port = 3000
+const port = 3000;
 
-app.post("/user/signup",()=>{
+app.use("/api/v1/user",userRouter);
 
-})
-
-app.post("/user/signin",()=>{
-
-})
-
-app.get("/courses",()=>{ // global courses ep
-
-})
-
-app.get("/user/purchasedCourses",()=>{ // users purchased courses only
-
-})
-
-
-app.post("/user/purchase",()=>{
-
-})
-
-
-
+app.use("/api/v1/courses",courseRouter);
 
 app.listen(port);
